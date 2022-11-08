@@ -24,12 +24,10 @@ import static org.junit.jupiter.api.Assertions.* ;
 
 import com.esprit.examen.entities.Produit;
 
-import lombok.extern.slf4j.Slf4j;
 
 
 //@RunWith(SpringRunner.class)
 @SpringBootTest
-@Slf4j
 public class ProduitServiceImplTest {
 	@Autowired
 	IProduitService prodService;
