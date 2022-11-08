@@ -18,7 +18,7 @@ import static org.junit.Assert.*;
 
 /* Juint5 */
 import  org.junit.jupiter.api.test;
-import static org.juint.jupiter.api.Assertions.* ;
+import static org.junit.jupiter.api.Assertions.* ;
 
 
 import com.esprit.examen.entities.CategorieClient;
