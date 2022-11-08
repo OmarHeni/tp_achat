@@ -17,13 +17,11 @@ import static org.junit.Assert.*;
 */
 
 /* Juint5 */
-import  org.junit.jupiter.api.test;
+import  org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.* ;
 
 
-import com.esprit.examen.entities.CategorieClient;
-import com.esprit.examen.entities.Client;
-import com.esprit.examen.entities.Profession;
+import com.esprit.examen.entities.Produit;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -31,26 +29,25 @@ import lombok.extern.slf4j.Slf4j;
 //@RunWith(SpringRunner.class)
 @SpringBootTest
 @Slf4j
-public class ClientServiceImplTest {
+public class ProduitServiceImplTest {
 	@Autowired
-	IClientService clientService;
+	IProduitService prodService;
 
 	
 	@Test
-	public void testAddClient() throws ParseException {
+	public void testAddProd() throws ParseException {
 
 		SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
-		Date dateNaissance = dateFormat.parse("30/09/2000");
-		Client c = new Client("Salhi", "Ahmed", dateNaissance, "ahmed.salhi@esprit.tn", "pwd", Profession.Cadre,
-				CategorieClient.Ordinaire);
-		Client client = clientService.addClient(c);
-		System.out.print("client "+client);
-		assertNotNull(client.getIdClient());
-		assertNotNull(client.getCategorieClient());
-		assertTrue(client.getNom().length() > 0);
-		clientService.deleteClient(client.getIdClient());
+		Date dateCreation= dateFormat.parse("30/09/2000");
+		Date dateMod dateFormat.parse("30/09/2001");
+		Produit c = new Produit(11, "prod1", 20 ,dateCreation, dateMod);
+		Produit produit = prodService.addProduit(c);
+		System.out.print("produit "+produit);
+		assertNotNull(produit.getIdProduit());
+		prodService.deleteProduit(client.getIdClient());
 
 	}
+	/*
 	@Test
 	public void testDeleteClient() throws ParseException {
 		SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
@@ -88,5 +85,5 @@ public class ClientServiceImplTest {
 
 		}
 	}
-
+*/
 }
