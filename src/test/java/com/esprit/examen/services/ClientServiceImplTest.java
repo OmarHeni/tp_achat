@@ -39,7 +39,7 @@ public class ProduitServiceImplTest {
 
 		SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
 		Date dateCreation= dateFormat.parse("30/09/2000");
-		Date dateMod dateFormat.parse("30/09/2001");
+		Date dateMod = dateFormat.parse("30/09/2001");
 		Produit c = new Produit(11, "prod1", 20 ,dateCreation, dateMod);
 		Produit produit = prodService.addProduit(c);
 		System.out.print("produit "+produit);
