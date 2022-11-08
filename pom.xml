@@ -95,7 +95,12 @@
 					<directory>${env}</directory>
 				</resource>
 			</resources>
-			<profiles>
+			
+	</build>
+
+
+
+	<profiles>
 				<profile>
 				<id>dev</id>
 				<properties>
@@ -120,11 +125,6 @@
 					</properties>
 				</profile>
 				</profiles>
-	</build>
-
-
-
-
 
 <distributionManagement>
     <repository>
