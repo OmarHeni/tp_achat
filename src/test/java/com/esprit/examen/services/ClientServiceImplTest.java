@@ -1,17 +1,25 @@
-/*package com.esprit.examen.services;
+package com.esprit.examen.services;
 
-import static org.junit.Assert.*;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
-
-import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.beans.factory.annotation.Autowired;
+/*
+Junit4
+import org.springframework.boot.test.context.SpringBootTest;
+import org.junit.runner.RunWith;
+import org.junit.Test;
+import static org.junit.Assert.*;
+
+*/
+
+/* Juint5 */
+import  org.junit.jupiter.api.test;
+import static org.juint.jupiter.api.Assertions.* ;
+
 
 import com.esprit.examen.entities.CategorieClient;
 import com.esprit.examen.entities.Client;
@@ -20,7 +28,7 @@ import com.esprit.examen.entities.Profession;
 import lombok.extern.slf4j.Slf4j;
 
 
-@RunWith(SpringRunner.class)
+//@RunWith(SpringRunner.class)
 @SpringBootTest
 @Slf4j
 public class ClientServiceImplTest {
