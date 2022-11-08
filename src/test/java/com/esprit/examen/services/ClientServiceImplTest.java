@@ -7,9 +7,10 @@ import java.util.Date;
 import java.util.List;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+
 /*
 Junit4
-import org.springframework.boot.test.context.SpringBootTest;
 import org.junit.runner.RunWith;
 import org.junit.Test;
 import static org.junit.Assert.*;
@@ -44,7 +45,7 @@ public class ProduitServiceImplTest {
 		Produit produit = prodService.addProduit(c);
 		System.out.print("produit "+produit);
 		assertNotNull(produit.getIdProduit());
-		prodService.deleteProduit(client.getIdClient());
+		prodService.deleteProduit(produit.getIdProduit());
 
 	}
 	/*
