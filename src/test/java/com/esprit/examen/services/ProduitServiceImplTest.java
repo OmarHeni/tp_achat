@@ -57,32 +57,19 @@ public class ProduitServiceImplTest {
 		prodService.deleteProduit(produit.getIdProduit());
 		assertNull(prodService.retrieveProduit(produit.getIdProduit()));
 	}
-/*
+
 	@Test
-	public void testRetrieveAllClients() throws ParseException {
-		SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
-		Date dateNaissance = dateFormat.parse("30/09/2000");
-		List<Client> clients = clientService.retrieveAllClients();
-		int expected = clients.size();
-		Client c = new Client("Salhi", "Ahmed", dateNaissance, "ahmed.salhi@esprit.tn", "pwd", Profession.Cadre,
-				CategorieClient.Ordinaire);
-		Client client = clientService.addClient(c);
-		assertEquals(expected + 1, clientService.retrieveAllClients().size());
-		clientService.deleteClient(client.getIdClient());
+	public void testRetrieveAllProduits() throws ParseException {
+	    SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+		Date dateCreation= dateFormat.parse("30/09/2000");
+		Date dateMod = dateFormat.parse("30/09/2001");
+		List<Produit> produits = prodService.retrieveAllProduits();
+		int expected = produits.size();
+		Produit c = new Produit("10","prod1",11, dateCreation, dateMod);
+		Produit produit = prodService.addProduit(c);
+		assertEquals(expected + 1, prodService.retrieveAllProduits().size());
+		prodService.deleteProduit(produits.getIdProduit());
 
 	}
-	@Test
-	public void testGetClientsByDateNaissance() throws ParseException
-	{
-		SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
-		Date startDate = dateFormat.parse("28/09/2000");
-		Date endDate = dateFormat.parse("30/09/2005");
-		List<Client> clients = clientService.getClientsByDateNaissance(startDate, endDate);
-		log.info(" count" + clients.size());
-		for (Client client : clients) {
-			log.info(" client : " + client.getNom()+ " né le "+client.getDateNaissance());
 
-		}
-	}
-*/
 }

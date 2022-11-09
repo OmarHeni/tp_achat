@@ -10,11 +10,11 @@ services:
 		volumes:
 			- /home/mysql/data:/var/lib/mysql
 
-		spring_app:
-			image: achatproject
-			container_name: achatprojet
-			restart: on-failure
-			ports:
-				- 9090:9090
-			depends_on
+	spring_app:
+		image: tpachat
+		container_name: achatprojet
+		restart: on-failure
+		ports:
+				- 9091:9091
+		depends_on:
 				- mysqldb
