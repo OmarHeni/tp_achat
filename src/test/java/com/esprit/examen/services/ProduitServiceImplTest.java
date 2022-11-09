@@ -39,25 +39,25 @@ public class ProduitServiceImplTest {
 		SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
 		Date dateCreation= dateFormat.parse("30/09/2000");
 		Date dateMod = dateFormat.parse("30/09/2001");
-		Produit c = new Produit();
+		Client c = new Produit("10","prod1",11.2, dateCreation, dateMod);
 		Produit produit = prodService.addProduit(c);
 		System.out.print("produit "+produit);
 		assertNotNull(produit.getIdProduit());
 		prodService.deleteProduit(produit.getIdProduit());
 
 	}
-	/*
-	@Test
-	public void testDeleteClient() throws ParseException {
-		SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
-		Date dateNaissance = dateFormat.parse("30/09/2000");
-		Client c = new Client("Salhi", "Ahmed", dateNaissance, "ahmed.salhi@esprit.tn", "pwd", Profession.Cadre,
-				CategorieClient.Ordinaire);
-		Client client = clientService.addClient(c);
-		clientService.deleteClient(client.getIdClient());
-		assertNull(clientService.retrieveClient(client.getIdClient()));
-	}
 
+	@Test
+	public void testDeleteProd() throws ParseException {
+		SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+		Date dateCreation= dateFormat.parse("30/09/2000");
+		Date dateMod = dateFormat.parse("30/09/2001");
+		Client c = new Produit("10","prod1",11.2, dateCreation, dateMod);
+		Produit produit = prodService.addProduit(c);
+		prodService.deleteProduit(produit.getIdProduit());
+		assertNull(prodService.retrieveProduit(produit.getIdProduit()));
+	}
+/*
 	@Test
 	public void testRetrieveAllClients() throws ParseException {
 		SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
