@@ -39,7 +39,7 @@ public class ProduitServiceImplTest {
 		SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
 		Date dateCreation= dateFormat.parse("30/09/2000");
 		Date dateMod = dateFormat.parse("30/09/2001");
-		Client c = new Produit("10","prod1",11.2, dateCreation, dateMod);
+		Produit c = new Produit("10","prod1",11.2, dateCreation, dateMod);
 		Produit produit = prodService.addProduit(c);
 		System.out.print("produit "+produit);
 		assertNotNull(produit.getIdProduit());
@@ -52,7 +52,7 @@ public class ProduitServiceImplTest {
 		SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
 		Date dateCreation= dateFormat.parse("30/09/2000");
 		Date dateMod = dateFormat.parse("30/09/2001");
-		Client c = new Produit("10","prod1",11.2, dateCreation, dateMod);
+		Produit c = new Produit("10","prod1",11.2, dateCreation, dateMod);
 		Produit produit = prodService.addProduit(c);
 		prodService.deleteProduit(produit.getIdProduit());
 		assertNull(prodService.retrieveProduit(produit.getIdProduit()));
