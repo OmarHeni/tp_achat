@@ -68,7 +68,7 @@ public class ProduitServiceImplTest {
 		Produit c = new Produit("10","prod1",11, dateCreation, dateMod);
 		Produit produit = prodService.addProduit(c);
 		assertEquals(expected + 1, prodService.retrieveAllProduits().size());
-		prodService.deleteProduit(produits.getIdProduit());
+		prodService.deleteProduit(produit.getIdProduit());
 
 	}
 
