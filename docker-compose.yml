@@ -1,14 +1,13 @@
-version : "3"
+version: "3"
 services:
   mysqldb:
-	  container_name: mysqldb
+    container_name: mysqldb
     image: mysql:8
     restart: unless-stopped
     environment:
       MYSQL_ROOT_PASSWORD: root
     volumes:
       - /home/mysql/data:/var/lib/mysql
-
   spring_app:
     image: tpachat
     container_name: achatprojet
@@ -16,44 +15,4 @@ services:
     ports:
       - 9091:9091
     depends_on:
-		  - mysqldb
-
-
-version: "3"
-services:
-        jenkins:
-                image: jenkinsci/blueocean:latest
-                container_name: jenkins
-                ports:
-                - 8080:8080
-                volumes:
-                        - /home/vagrant/jenkins:/var/jenkins_home
-                        - ../../../var/run/docker.sock:/var/run/docker.sock
-                restart: on-failure
-        nexus:
-                image: sonatype/nexus3
-                container_name: nexus
-                ports:
-                - 8081:8081
-                - 8443:8443
-                volumes:
-                        - /home/vagrant/nexus-data:/nexus-data
-        sonar:
-                image: sonarqube
-                container_name: sonar
-                ports:
-                - 9000:9000
-                volumes:
-                        - /home/vagrant/sonarqube/data:/opt/sonarqube/data
-        prometheus:
-                 image: prom/prometheus
-                 container_name: prometheus
-                 ports:
-                 - 9090:9090
-                 volumes:
-                 - /home/vagrant/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
-        grafana:
-                image: grafana/grafana
-                container_name: grafana
-                ports:
-                - 3000:3000
+      - mysqldb
