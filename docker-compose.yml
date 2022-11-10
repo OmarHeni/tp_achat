@@ -5,7 +5,8 @@ services:
     image: mysql:8
     restart: unless-stopped
     environment:
-      MYSQL_ROOT_PASSWORD: root
+      - MYSQL_ROOT_PASSWORD= root
+      - MYSQL_DATABASE= tpachat  
     volumes:
       - /home/mysql/data:/var/lib/mysql
     networks:
@@ -16,10 +17,10 @@ services:
     restart: on-failure
     ports:
       - 8089:8089
-    depends_on:
-      - mysqldb
     networks:
       - tpachat_db
+    depends_on:
+      - mysqldb
+
 networks:
   tpachat_db:
-    external: true
