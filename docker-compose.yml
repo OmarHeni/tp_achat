@@ -9,7 +9,7 @@ services:
     volumes:
       - /home/mysql/data:/var/lib/mysql
     networks:
-      - achat-mysql
+      - tpachat_db
   spring_app:
     image: tpachat
     container_name: achatprojet
@@ -19,4 +19,4 @@ services:
     depends_on:
       - mysqldb
     networks:
-    - achat-mysql
+      - tpachat_db
