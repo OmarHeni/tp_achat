@@ -20,3 +20,6 @@ services:
       - mysqldb
     networks:
       - tpachat_db
+networks:
+  tpachat_db:
+    external: true
